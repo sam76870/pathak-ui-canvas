@@ -57,72 +57,49 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-text-gradient bg-clip-text text-transparent">
-              Featured Projects
-            </span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of impactful applications I've built using modern technologies
-          </p>
+        <div className="flex justify-between items-center mb-16">
+          <div>
+            <p className="text-sm text-muted-foreground mb-2">MY CLIENT</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+              Projects
+            </h2>
+          </div>
+          <div className="flex gap-4">
+            <Button variant="ghost" size="icon" className="w-12 h-12 bg-primary/10 hover:bg-primary/20">
+              <span className="text-primary">←</span>
+            </Button>
+            <Button variant="ghost" size="icon" className="w-12 h-12 bg-primary text-primary-foreground hover:bg-primary/90">
+              <span>→</span>
+            </Button>
+          </div>
         </div>
 
-        {/* Featured Projects */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {featuredProjects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 bg-card-gradient border-border/50 overflow-hidden">
+        {/* Featured Projects Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {projects.slice(0, 3).map((project, index) => (
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-card border-border/50 overflow-hidden">
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-48 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex gap-2">
-                    <Button size="sm" className="bg-primary/90 hover:bg-primary text-primary-foreground">
-                      <Eye className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button size="sm" variant="outline" className="bg-background/90 hover:bg-background">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
+                <div className="absolute top-4 right-4">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                    <ExternalLink className="w-4 h-4 text-primary-foreground" />
                   </div>
                 </div>
               </div>
 
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-3">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold text-foreground mb-2">{project.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  {project.description.slice(0, 120)}...
+                </p>
                 
-                <div className="mb-4">
-                  <h4 className="font-semibold text-foreground mb-2">Key Challenge:</h4>
-                  <p className="text-sm text-muted-foreground">{project.challenges}</p>
-                </div>
-
-                <div className="mb-6">
-                  <h4 className="font-semibold text-accent mb-2">Impact:</h4>
-                  <p className="text-sm text-muted-foreground">{project.impact}</p>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-
-                <div className="flex gap-3">
-                  <Button className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Live
-                  </Button>
-                  <Button variant="outline" className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    <Github className="w-4 h-4 mr-2" />
-                    Source Code
+                <div className="flex gap-2 mb-4">
+                  <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs px-3 py-1 h-7 rounded-none">
+                    VIEW PROJECT
                   </Button>
                 </div>
               </CardContent>
@@ -130,50 +107,68 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Other Projects */}
-        <div className="text-center mb-12">
-          <h3 className="text-3xl font-semibold text-foreground">Other Notable Projects</h3>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {otherProjects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-card-gradient border-border/50">
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h4>
-                  <div className="flex gap-2">
-                    <Button size="icon" variant="ghost" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                    <Button size="icon" variant="ghost" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Github className="w-4 h-4" />
-                    </Button>
+        {/* Testimonials Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-8">Happy Clients Says</h3>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-card border-border/50 p-6">
+              <CardContent className="p-0">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
+                    <span className="text-lg">👤</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground">Martha Suthland</h4>
+                    <p className="text-sm text-muted-foreground mb-3">Tech Director</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      "We are amazed by the dedication of your teams. All your hard work is paid and we really appreciate your efforts to improve the project and appreciate you providing clear and concise solutions..."
+                    </p>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
 
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{project.description}</p>
-
-                <div className="mb-4">
-                  <p className="text-xs text-accent font-medium">{project.impact}</p>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="outline" className="text-xs border-primary/30 text-primary">
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.technologies.length > 4 && (
-                    <Badge variant="outline" className="text-xs border-muted text-muted-foreground">
-                      +{project.technologies.length - 4} more
-                    </Badge>
-                  )}
+            <Card className="bg-card border-border/50 p-6">
+              <CardContent className="p-0">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
+                    <span className="text-lg">👤</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground">Minhiel Meyer</h4>
+                    <p className="text-sm text-muted-foreground mb-3">Product Manager</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      "We are amazed by the dedication of your teams. All your hard work is paid and we really appreciate your efforts to improve the project and appreciate you providing clear and concise solutions..."
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
-          ))}
+          </div>
+        </div>
+
+        {/* Clients Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-8">Clients</h3>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { name: "Decisive", logo: "D" },
+              { name: "BigFish", logo: "BF" },
+              { name: "Loyalist", logo: "L" },
+              { name: "Subscription", logo: "S" },
+              { name: "Symphony", logo: "♪" },
+              { name: "BeGX", logo: "B" }
+            ].map((client, index) => (
+              <Card key={index} className="bg-card border-border/50 p-4 h-20 flex items-center justify-center hover:shadow-md transition-shadow">
+                <div className="text-center">
+                  <div className="font-bold text-lg text-foreground">{client.logo}</div>
+                  <div className="text-xs text-muted-foreground">{client.name}</div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Call to Action */}
