@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Download } from "lucide-react";
 
@@ -74,36 +73,28 @@ ACHIEVEMENTS
                 Software Engineer
               </p>
               
-              <p className="text-muted-foreground text-lg leading-relaxed max-w-lg">Motivated Software Engineer with 3.6+ years of experience in full-stack web development, specializing in and modern UI applications.</p>
-            </div>
-
-            {/* Tab-like navigation */}
-            <div className="flex gap-8 border-b border-border overflow-x-auto">
-              <button className="pb-4 border-b-2 border-primary text-primary font-medium whitespace-nowrap">
-                ABOUT
-              </button>
-              <button className="pb-4 text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                MY SERVICES
-              </button>
-              <button className="pb-4 text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                INTERVIEWS
-              </button>
-              <button className="pb-4 text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                AWARDS
-              </button>
-              <button className="pb-4 text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                EXHIBITIONS
-              </button>
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-lg">
+                Motivated Software Engineer with 3.6+ years of experience in full-stack web development, 
+                specializing in and modern UI applications.
+              </p>
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-foreground">Why hire me for your next project?</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                Why hire me for your next project?
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Passionate about driving innovation and continuously improving system performance. I work with technologies such as React.js, VUE 2, Node.js, and MongoDB, always seeking opportunities to deliver scalable solutions within dynamic, growth-driven teams.
+                Passionate about driving innovation and continuously improving system performance. 
+                I work with technologies such as React.js, VUE 2, Node.js, and MongoDB, always seeking 
+                opportunities to deliver scalable solutions within dynamic, growth-driven teams.
               </p>
               
               <div className="flex gap-4">
-                <Button size="lg" onClick={() => scrollToSection('contact')} className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 rounded-none">
+                <Button 
+                  size="lg" 
+                  onClick={() => scrollToSection('contact')} 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 rounded-none"
+                >
                   LEARN MORE
                 </Button>
                 <Button 
@@ -123,7 +114,7 @@ ACHIEVEMENTS
           <div className="relative order-1 lg:order-2">
             <div className="relative w-full max-w-md mx-auto">
               <img 
-                src="https://i.postimg.cc/W4GXyhMX/Whats-App-Image-2025-07-21-at-15-39-28.jpg" 
+                src="https://i.postimg.cc/d3M7xvn4/Whats-App-Image-2025-07-22-at-23-33-51.png" 
                 alt="Shubham Pathak" 
                 className="w-full h-auto object-cover rounded-lg aspect-square"
               />

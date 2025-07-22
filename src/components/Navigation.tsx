@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu, X } from "lucide-react";
@@ -10,10 +9,9 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -61,16 +59,7 @@ const Navigation = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
-    let targetId = sectionId;
-    
-    // Map navigation items to existing sections
-    if (sectionId === 'experience') {
-      targetId = 'about'; // Experience content is in about section
-    } else if (sectionId === 'skills') {
-      targetId = 'about'; // Skills content is in about section
-    }
-    
-    const element = document.getElementById(targetId);
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
