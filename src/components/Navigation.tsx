@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu, X } from "lucide-react";
@@ -60,8 +61,19 @@ const Navigation = () => {
   };
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    let targetId = sectionId;
+    
+    // Map navigation items to existing sections
+    if (sectionId === 'experience') {
+      targetId = 'about'; // Experience content is in about section
+    } else if (sectionId === 'skills') {
+      targetId = 'about'; // Skills content is in about section
+    }
+    
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
     setIsMenuOpen(false);
   };
 

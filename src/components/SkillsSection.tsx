@@ -1,14 +1,8 @@
+
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  Code, 
-  Database, 
-  Palette, 
-  Server, 
-  Smartphone, 
-  Globe,
-  GitBranch,
-  Settings
-} from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import { Code, Database, Cloud, Wrench } from "lucide-react";
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -16,70 +10,57 @@ const SkillsSection = () => {
       title: "Frontend Development",
       icon: Code,
       skills: [
-        { name: "React.js", level: 95 },
-        { name: "Vue.js", level: 90 },
-        { name: "TypeScript", level: 88 },
-        { name: "JavaScript", level: 95 },
-        { name: "HTML5/CSS3", level: 92 },
-        { name: "Tailwind CSS", level: 85 }
+        { name: "React.js", level: 90, color: "bg-blue-500" },
+        { name: "Vue.js", level: 85, color: "bg-green-500" },
+        { name: "TypeScript", level: 80, color: "bg-blue-600" },
+        { name: "JavaScript", level: 95, color: "bg-yellow-500" },
+        { name: "HTML5/CSS3", level: 90, color: "bg-orange-500" },
+        { name: "Tailwind CSS", level: 85, color: "bg-cyan-500" }
       ]
     },
     {
-      title: "Backend Development",
-      icon: Server,
-      skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Express.js", level: 85 },
-        { name: "REST APIs", level: 88 },
-        { name: "GraphQL", level: 75 },
-        { name: "Microservices", level: 78 }
-      ]
-    },
-    {
-      title: "Database & Cloud",
+      title: "Backend Development", 
       icon: Database,
       skills: [
-        { name: "MongoDB", level: 88 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "Redis", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Docker", level: 72 }
+        { name: "Node.js", level: 85, color: "bg-green-600" },
+        { name: "Express.js", level: 80, color: "bg-gray-600" },
+        { name: "MongoDB", level: 75, color: "bg-green-700" },
+        { name: "PostgreSQL", level: 70, color: "bg-blue-700" },
+        { name: "REST APIs", level: 85, color: "bg-purple-500" },
+        { name: "GraphQL", level: 65, color: "bg-pink-500" }
       ]
     },
     {
-      title: "Tools & Others",
-      icon: Settings,
+      title: "Tools & Technologies",
+      icon: Wrench,
       skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Webpack", level: 80 },
-        { name: "Jest/Testing", level: 85 },
-        { name: "CI/CD", level: 75 },
-        { name: "Agile/Scrum", level: 88 }
+        { name: "Git/GitHub", level: 90, color: "bg-gray-700" },
+        { name: "Docker", level: 70, color: "bg-blue-600" },
+        { name: "Jenkins", level: 65, color: "bg-red-600" },
+        { name: "Jest", level: 75, color: "bg-red-500" },
+        { name: "Webpack", level: 70, color: "bg-blue-400" },
+        { name: "Vite", level: 80, color: "bg-purple-600" }
+      ]
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: Cloud,
+      skills: [
+        { name: "AWS", level: 70, color: "bg-orange-600" },
+        { name: "Redis", level: 65, color: "bg-red-700" },
+        { name: "Socket.io", level: 80, color: "bg-gray-800" },
+        { name: "CI/CD", level: 70, color: "bg-indigo-500" },
+        { name: "Nginx", level: 60, color: "bg-green-800" },
+        { name: "PM2", level: 65, color: "bg-blue-800" }
       ]
     }
   ];
 
-  const expertise = [
-    {
-      icon: Globe,
-      title: "Realtime Applications",
-      description: "Building interactive dashboards with real-time data synchronization"
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Creating responsive, user-centric interfaces with modern design principles"
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile-First Development",
-      description: "Developing responsive applications that work seamlessly across all devices"
-    },
-    {
-      icon: GitBranch,
-      title: "System Architecture",
-      description: "Designing scalable, maintainable system architectures for large-scale applications"
-    }
+  const certifications = [
+    "AWS Certified Developer Associate",
+    "MongoDB Certified Developer",
+    "React.js Professional Certificate",
+    "Node.js Application Developer"
   ];
 
   return (
@@ -92,35 +73,29 @@ const SkillsSection = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Technologies and methodologies I use to build exceptional products
+            Comprehensive technical skills acquired through years of hands-on experience and continuous learning.
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-card-gradient border-border/50">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
-                    <category.icon className="w-6 h-6 text-primary" />
+            <Card key={index} className="bg-card-gradient border-border/50 hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <category.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-lg text-foreground">{category.title}</h3>
+                  <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
                 </div>
-
+                
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-foreground">{skill.name}</span>
-                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
+                        <span className="font-medium text-foreground">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <div className="w-full bg-secondary rounded-full h-2">
-                        <div 
-                          className="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
+                      <Progress value={skill.level} className="h-2" />
                     </div>
                   ))}
                 </div>
@@ -129,23 +104,16 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Areas of Expertise */}
-        <div className="text-center mb-12">
-          <h3 className="text-3xl font-semibold mb-8 text-foreground">Areas of Expertise</h3>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {expertise.map((area, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-card-gradient border-border/50 text-center">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                  <area.icon className="w-8 h-8 text-accent" />
-                </div>
-                <h4 className="font-semibold text-lg mb-3 text-foreground">{area.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{area.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Certifications */}
+        <div className="text-center">
+          <h3 className="text-2xl font-semibold text-foreground mb-8">Certifications</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {certifications.map((cert, index) => (
+              <Badge key={index} variant="secondary" className="px-4 py-2 text-sm">
+                {cert}
+              </Badge>
+            ))}
+          </div>
         </div>
       </div>
     </section>

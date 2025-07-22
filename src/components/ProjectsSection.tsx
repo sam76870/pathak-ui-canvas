@@ -1,9 +1,12 @@
+
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 
 const ProjectsSection = () => {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
   const projects = [
     {
       title: "RealTime Analytics Dashboard",
@@ -12,8 +15,8 @@ const ProjectsSection = () => {
       technologies: ["React.js", "Node.js", "Socket.io", "MongoDB", "Chart.js", "Redis"],
       challenges: "Real-time data synchronization across multiple clients",
       impact: "Improved decision-making speed by 60% for client operations",
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://analytics-dashboard-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/realtime-analytics-dashboard",
       featured: true
     },
     {
@@ -23,8 +26,8 @@ const ProjectsSection = () => {
       technologies: ["Vue.js", "Express.js", "PostgreSQL", "Stripe API", "JWT", "AWS S3"],
       challenges: "Scalable product catalog and secure payment processing",
       impact: "Increased client sales by 40% within first quarter",
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://ecommerce-platform-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/vue-ecommerce-platform",
       featured: true
     },
     {
@@ -34,8 +37,8 @@ const ProjectsSection = () => {
       technologies: ["React.js", "Node.js", "MongoDB", "Socket.io", "Cloudinary", "JWT"],
       challenges: "Real-time collaboration and file management",
       impact: "Improved team productivity by 35% across multiple organizations",
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://project-management-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/project-management-tool",
       featured: false
     },
     {
@@ -45,14 +48,25 @@ const ProjectsSection = () => {
       technologies: ["React.js", "OpenWeather API", "Chart.js", "Tailwind CSS", "PWA"],
       challenges: "Data visualization and offline functionality",
       impact: "10,000+ monthly active users with 4.8-star rating",
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://weather-analytics-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/weather-analytics-app",
       featured: false
     }
   ];
 
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
+  const nextProject = () => {
+    setCurrentProjectIndex((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
+  const visibleProjects = [
+    projects[currentProjectIndex],
+    projects[(currentProjectIndex + 1) % projects.length],
+    projects[(currentProjectIndex + 2) % projects.length]
+  ];
 
   return (
     <section id="projects" className="py-20">
@@ -65,29 +79,44 @@ const ProjectsSection = () => {
             </h2>
           </div>
           <div className="flex gap-4">
-            <Button variant="ghost" size="icon" className="w-12 h-12 bg-primary/10 hover:bg-primary/20">
-              <span className="text-primary">←</span>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={prevProject}
+              className="w-12 h-12 bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="w-12 h-12 bg-primary text-primary-foreground hover:bg-primary/90">
-              <span>→</span>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={nextProject}
+              className="w-12 h-12 bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <ChevronRight className="w-5 h-5" />
             </Button>
           </div>
         </div>
 
         {/* Featured Projects Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {projects.slice(0, 3).map((project, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 bg-card border-border/50 overflow-hidden">
+          {visibleProjects.map((project, index) => (
+            <Card key={`${currentProjectIndex}-${index}`} className="group hover:shadow-lg transition-all duration-300 bg-card border-border/50 overflow-hidden">
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 right-4">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <a 
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors"
+                  >
                     <ExternalLink className="w-4 h-4 text-primary-foreground" />
-                  </div>
+                  </a>
                 </div>
               </div>
 
@@ -98,9 +127,16 @@ const ProjectsSection = () => {
                 </p>
                 
                 <div className="flex gap-2 mb-4">
-                  <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs px-3 py-1 h-7 rounded-none">
-                    VIEW PROJECT
-                  </Button>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground text-xs px-3 py-1 h-7 rounded-none">
+                      <Github className="w-3 h-3 mr-1" />
+                      VIEW PROJECT
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
