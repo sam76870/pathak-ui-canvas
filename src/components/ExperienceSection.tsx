@@ -6,46 +6,35 @@ import { CalendarDays, MapPin, Building } from "lucide-react";
 const ExperienceSection = () => {
   const experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "TechCorp Solutions",
+      title: "SDE-1 (Consultant)",
+      company: "Fynd (via Deqode)",
       location: "Mumbai, India",
-      duration: "2022 - Present",
+      duration: "Mar 2025 - Present",
       type: "Full-time",
-      description: "Leading development of scalable web applications using React.js and Node.js. Mentoring junior developers and architecting solutions for enterprise clients.",
+      description: "Contributing to key e-commerce products (AJIO, TIRA, Netmeds) on the Jio Commerce Platform, developing scalable frontends and implementing robust solutions.",
       achievements: [
-        "Improved application performance by 40%",
-        "Led team of 5 developers",
-        "Delivered projects serving 10,000+ users"
+        "Contributed to key e-commerce products (AJIO, TIRA, Netmeds) on the Jio Commerce Platform",
+        "Developed scalable frontends using React, Vue 2, and custom theme engines (Jetfire, Skyfire)",
+        "Implemented reusable UI components and advanced caching strategies",
+        "Built microservice modules for payment gateways, store management, and API integrations",
+        "Worked on backend/API layer integrations using Node.js and MongoDB"
       ],
-      technologies: ["React.js", "Node.js", "MongoDB", "AWS", "TypeScript"]
+      technologies: ["React.js", "Vue 2", "Node.js", "MongoDB", "Jetfire", "Skyfire"]
     },
     {
       title: "Software Engineer",
-      company: "Digital Innovations Ltd",
-      location: "Mumbai, India", 
-      duration: "2020 - 2022",
+      company: "AVL India Pvt. Ltd.",
+      location: "Pune, India",
+      duration: "Nov 2021 - Dec 2024",
       type: "Full-time",
-      description: "Developed full-stack applications using Vue.js and Express.js. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      description: "Designed and developed real-time monitoring systems, automation solutions, and enterprise applications using modern web technologies and IoT platforms.",
       achievements: [
-        "Built 15+ production applications",
-        "Reduced deployment time by 60%",
-        "Implemented CI/CD pipelines"
+        "Designed real-time dashboards for DAKSHIIOT using Angular, React, and Node.js",
+        "Developed a Control Tower for system monitoring leveraging JavaScript, JCR, MQTT, and InfluxDB",
+        "Implemented Digital Maintenance automation for engine reports with QR-based scanning",
+        "Built SPAs with robust UI/UX principles and integrated cloud databases (MS SQL Server, JCR)"
       ],
-      technologies: ["Vue.js", "Express.js", "PostgreSQL", "Docker", "Jenkins"]
-    },
-    {
-      title: "Junior Developer",
-      company: "StartupHub",
-      location: "Mumbai, India",
-      duration: "2019 - 2020",
-      type: "Full-time",
-      description: "Started career focusing on frontend development with React.js. Gained experience in modern web development practices and agile methodologies.",
-      achievements: [
-        "Successfully completed 8 projects",
-        "Learned full-stack development",
-        "Contributed to open-source projects"
-      ],
-      technologies: ["React.js", "JavaScript", "HTML5", "CSS3", "Git"]
+      technologies: ["Angular", "React.js", "Node.js", "JavaScript", "JCR", "MQTT", "InfluxDB", "MS SQL Server"]
     }
   ];
 

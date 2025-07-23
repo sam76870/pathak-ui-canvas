@@ -114,7 +114,7 @@ ACHIEVEMENTS
           <div className="relative order-1 lg:order-2">
             <div className="relative w-full max-w-md mx-auto">
               <img 
-                src="https://i.postimg.cc/d3M7xvn4/Whats-App-Image-2025-07-22-at-23-33-51.png" 
+                src="https://i.postimg.cc/G2YTsb5y/Whats-App-Image-2025-07-22-at-23-33-51.png" 
                 alt="Shubham Pathak" 
                 className="w-full h-auto object-cover rounded-lg aspect-square"
               />

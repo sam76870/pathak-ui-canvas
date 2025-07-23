@@ -9,47 +9,69 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "RealTime Analytics Dashboard",
-      description: "A comprehensive real-time analytics platform built for enterprise clients, featuring interactive charts, live data streaming, and customizable widgets. Handles over 10,000 concurrent users with sub-second response times.",
+      title: "Food Web App",
+      description: "Engineered a full-stack food ordering platform with user review features, diverse meal plans, and intuitive login/signup for streamlined user account management. Focused on optimizing UX through thoughtful design and smooth navigation.",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop&crop=center",
+      technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+      challenges: "User experience optimization and meal plan curation",
+      impact: "Curated diverse meal plans to accommodate various culinary preferences",
+      liveUrl: "https://food-web-app-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/food-web-app",
+      featured: true
+    },
+    {
+      title: "Reels Web App",
+      description: "Designed and developed a video-sharing app with features for upload, likes, and comments. Implemented Firebase for real-time database syncing and management with seamless user interaction.",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop&crop=center",
+      technologies: ["React.js", "Tailwind CSS", "Firebase", "Material UI"],
+      challenges: "Real-time video streaming and user engagement features",
+      impact: "Real-time database syncing with smooth video upload experience",
+      liveUrl: "https://reels-web-app-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/reels-web-app",
+      featured: true
+    },
+    {
+      title: "DAKSHIIOT Dashboard",
+      description: "Real-time IoT monitoring dashboard with data visualization, system alerts, and comprehensive analytics for industrial applications. Built for enterprise-level monitoring and control.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
-      technologies: ["React.js", "Node.js", "Socket.io", "MongoDB", "Chart.js", "Redis"],
-      challenges: "Real-time data synchronization across multiple clients",
-      impact: "Improved decision-making speed by 60% for client operations",
-      liveUrl: "https://analytics-dashboard-demo.netlify.app",
-      githubUrl: "https://github.com/shubhampathak/realtime-analytics-dashboard",
-      featured: true
-    },
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with advanced features including product recommendations, payment integration, inventory management, and admin dashboard. Built with modern UI/UX principles.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center",
-      technologies: ["Vue.js", "Express.js", "PostgreSQL", "Stripe API", "JWT", "AWS S3"],
-      challenges: "Scalable product catalog and secure payment processing",
-      impact: "Increased client sales by 40% within first quarter",
-      liveUrl: "https://ecommerce-platform-demo.netlify.app",
-      githubUrl: "https://github.com/shubhampathak/vue-ecommerce-platform",
-      featured: true
-    },
-    {
-      title: "Project Management Tool",
-      description: "Collaborative project management application with task tracking, team communication, file sharing, and progress visualization. Designed for remote teams and agile workflows.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center",
-      technologies: ["React.js", "Node.js", "MongoDB", "Socket.io", "Cloudinary", "JWT"],
-      challenges: "Real-time collaboration and file management",
-      impact: "Improved team productivity by 35% across multiple organizations",
-      liveUrl: "https://project-management-demo.netlify.app",
-      githubUrl: "https://github.com/shubhampathak/project-management-tool",
+      technologies: ["Angular", "React", "Node.js", "MQTT", "InfluxDB"],
+      challenges: "Real-time IoT data processing and visualization",
+      impact: "Enhanced industrial monitoring with real-time data insights",
+      liveUrl: "https://dakshiiot-dashboard-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/dakshiiot-dashboard",
       featured: false
     },
     {
-      title: "Weather Analytics App",
-      description: "Modern weather application with detailed forecasts, interactive maps, and historical data analysis. Features beautiful animations and responsive design for all devices.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop&crop=center",
-      technologies: ["React.js", "OpenWeather API", "Chart.js", "Tailwind CSS", "PWA"],
-      challenges: "Data visualization and offline functionality",
-      impact: "10,000+ monthly active users with 4.8-star rating",
-      liveUrl: "https://weather-analytics-demo.netlify.app",
-      githubUrl: "https://github.com/shubhampathak/weather-analytics-app",
+      title: "Control Tower System",
+      description: "System monitoring platform leveraging JavaScript, JCR, MQTT, and InfluxDB for real-time industrial equipment tracking and maintenance with comprehensive reporting.",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center",
+      technologies: ["JavaScript", "JCR", "MQTT", "InfluxDB", "Node.js"],
+      challenges: "Industrial equipment monitoring and maintenance automation",
+      impact: "Streamlined industrial maintenance with automated reporting",
+      liveUrl: "https://control-tower-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/control-tower",
+      featured: false
+    },
+    {
+      title: "Digital Maintenance System",
+      description: "QR-based scanning automation system for engine reports and digital maintenance workflows with comprehensive reporting features and automated data collection.",
+      image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=600&h=400&fit=crop&crop=center",
+      technologies: ["JavaScript", "QR Scanner", "Node.js", "MS SQL Server"],
+      challenges: "QR-based automation and digital workflow management",
+      impact: "Automated engine report generation with QR-based scanning",
+      liveUrl: "https://digital-maintenance-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/digital-maintenance",
+      featured: false
+    },
+    {
+      title: "E-Commerce Platform Components",
+      description: "Scalable frontend components and microservice modules for payment gateways, store management, and API integrations on Jio Commerce Platform (AJIO, TIRA, Netmeds).",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center",
+      technologies: ["React", "Vue 2", "Jetfire", "Skyfire", "Node.js", "MongoDB"],
+      challenges: "Scalable e-commerce components and microservice architecture",
+      impact: "Enhanced e-commerce platform performance with reusable components",
+      liveUrl: "https://ecommerce-components-demo.netlify.app",
+      githubUrl: "https://github.com/shubhampathak/ecommerce-components",
       featured: false
     }
   ];
@@ -143,69 +165,6 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Testimonials Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-8">Happy Clients Says</h3>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-card border-border/50 p-6">
-              <CardContent className="p-0">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
-                    <span className="text-lg">👤</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-foreground">Martha Suthland</h4>
-                    <p className="text-sm text-muted-foreground mb-3">Tech Director</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      "We are amazed by the dedication of your teams. All your hard work is paid and we really appreciate your efforts to improve the project and appreciate you providing clear and concise solutions..."
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border/50 p-6">
-              <CardContent className="p-0">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
-                    <span className="text-lg">👤</span>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-foreground">Minhiel Meyer</h4>
-                    <p className="text-sm text-muted-foreground mb-3">Product Manager</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      "We are amazed by the dedication of your teams. All your hard work is paid and we really appreciate your efforts to improve the project and appreciate you providing clear and concise solutions..."
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* Clients Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-8">Clients</h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              { name: "Decisive", logo: "D" },
-              { name: "BigFish", logo: "BF" },
-              { name: "Loyalist", logo: "L" },
-              { name: "Subscription", logo: "S" },
-              { name: "Symphony", logo: "♪" },
-              { name: "BeGX", logo: "B" }
-            ].map((client, index) => (
-              <Card key={index} className="bg-card border-border/50 p-4 h-20 flex items-center justify-center hover:shadow-md transition-shadow">
-                <div className="text-center">
-                  <div className="font-bold text-lg text-foreground">{client.logo}</div>
-                  <div className="text-xs text-muted-foreground">{client.name}</div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
 
         {/* Call to Action */}
         <div className="text-center mt-16">

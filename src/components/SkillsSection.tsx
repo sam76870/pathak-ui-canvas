@@ -10,57 +10,76 @@ const SkillsSection = () => {
       title: "Frontend Development",
       icon: Code,
       skills: [
-        { name: "React.js", level: 90, color: "bg-blue-500" },
-        { name: "Vue.js", level: 85, color: "bg-green-500" },
-        { name: "TypeScript", level: 80, color: "bg-blue-600" },
-        { name: "JavaScript", level: 95, color: "bg-yellow-500" },
-        { name: "HTML5/CSS3", level: 90, color: "bg-orange-500" },
-        { name: "Tailwind CSS", level: 85, color: "bg-cyan-500" }
+        { name: "React.js", level: 90 },
+        { name: "Angular", level: 85 },
+        { name: "Vue 2", level: 80 },
+        { name: "Material UI", level: 85 },
+        { name: "Tailwind CSS", level: 90 },
+        { name: "HTML/CSS", level: 95 },
+        { name: "JavaScript", level: 90 }
       ]
     },
     {
       title: "Backend Development", 
       icon: Database,
       skills: [
-        { name: "Node.js", level: 85, color: "bg-green-600" },
-        { name: "Express.js", level: 80, color: "bg-gray-600" },
-        { name: "MongoDB", level: 75, color: "bg-green-700" },
-        { name: "PostgreSQL", level: 70, color: "bg-blue-700" },
-        { name: "REST APIs", level: 85, color: "bg-purple-500" },
-        { name: "GraphQL", level: 65, color: "bg-pink-500" }
+        { name: "Node.js", level: 85 },
+        { name: "Express.js", level: 80 },
+        { name: "Django", level: 70 },
+        { name: "Next.js", level: 75 },
+        { name: "Redux", level: 80 },
+        { name: "MongoDB", level: 85 },
+        { name: "SQL Server", level: 80 }
+      ]
+    },
+    {
+      title: "Programming Languages",
+      icon: Code,
+      skills: [
+        { name: "JavaScript", level: 90 },
+        { name: "Python", level: 80 },
+        { name: "Java", level: 75 },
+        { name: "C++", level: 70 }
       ]
     },
     {
       title: "Tools & Technologies",
       icon: Wrench,
       skills: [
-        { name: "Git/GitHub", level: 90, color: "bg-gray-700" },
-        { name: "Docker", level: 70, color: "bg-blue-600" },
-        { name: "Jenkins", level: 65, color: "bg-red-600" },
-        { name: "Jest", level: 75, color: "bg-red-500" },
-        { name: "Webpack", level: 70, color: "bg-blue-400" },
-        { name: "Vite", level: 80, color: "bg-purple-600" }
-      ]
-    },
-    {
-      title: "Cloud & DevOps",
-      icon: Cloud,
-      skills: [
-        { name: "AWS", level: 70, color: "bg-orange-600" },
-        { name: "Redis", level: 65, color: "bg-red-700" },
-        { name: "Socket.io", level: 80, color: "bg-gray-800" },
-        { name: "CI/CD", level: 70, color: "bg-indigo-500" },
-        { name: "Nginx", level: 60, color: "bg-green-800" },
-        { name: "PM2", level: 65, color: "bg-blue-800" }
+        { name: "Git/Version Control", level: 90 },
+        { name: "JCR", level: 75 },
+        { name: "MQTT", level: 80 },
+        { name: "InfluxDB", level: 75 },
+        { name: "Firebase", level: 80 },
+        { name: "Jio Commerce Platform", level: 85 }
       ]
     }
   ];
 
-  const certifications = [
-    "AWS Certified Developer Associate",
-    "MongoDB Certified Developer",
-    "React.js Professional Certificate",
-    "Node.js Application Developer"
+  const coreCompetencies = [
+    "Responsive Design",
+    "Front-End Frameworks", 
+    "UI/UX Design",
+    "Version Control Systems (Git)",
+    "API Integration",
+    "Web Performance Optimization",
+    "Testing Frameworks",
+    "Agile/Scrum Methodologies",
+    "Progressive Web Applications (PWA)"
+  ];
+
+  const highlights = [
+    "Awarded for top position in academic qualifications at the university level",
+    "Qualified for CODEKAZE 2019 (national coding event by Coding Ninjas)",
+    "Participated in a website design competition organized by DEVSTART"
+  ];
+
+  const softSkills = [
+    "Strong Communication",
+    "Problem Solving", 
+    "Negotiation",
+    "Collaboration",
+    "Leadership"
   ];
 
   return (
@@ -104,13 +123,40 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Certifications */}
-        <div className="text-center">
-          <h3 className="text-2xl font-semibold text-foreground mb-8">Certifications</h3>
+        {/* Core Competencies */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">Core Competencies</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {certifications.map((cert, index) => (
+            {coreCompetencies.map((competency, index) => (
               <Badge key={index} variant="secondary" className="px-4 py-2 text-sm">
-                {cert}
+                {competency}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        {/* Highlights */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">Highlights</h3>
+          <div className="max-w-4xl mx-auto">
+            <ul className="space-y-3">
+              {highlights.map((highlight, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                  <span className="text-muted-foreground">{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Soft Skills */}
+        <div className="text-center">
+          <h3 className="text-2xl font-semibold text-foreground mb-8">Soft Skills</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {softSkills.map((skill, index) => (
+              <Badge key={index} variant="outline" className="px-4 py-2 text-sm">
+                {skill}
               </Badge>
             ))}
           </div>
