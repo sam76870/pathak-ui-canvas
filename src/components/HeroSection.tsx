@@ -11,7 +11,7 @@ const HeroSection = () => {
 
   const downloadResume = () => {
 
-    const resumePath = '/resume/Shubham Pathak new.pdf';
+    const resumePath = '/Shubham Pathak new.pdf';
     // Create a temporary link element and trigger download
     const link = document.createElement('a');
     link.href = resumePath;
