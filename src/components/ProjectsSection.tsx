@@ -75,6 +75,12 @@ const ProjectsSection = () => {
       featured: false
     }
   ];
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
 
   const nextProject = () => {
     setCurrentProjectIndex((prev) => (prev + 1) % projects.length);
@@ -171,7 +177,9 @@ const ProjectsSection = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Interested in working together? Let's discuss your next project.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
+          <Button size="lg" 
+          onClick={() => scrollToSection('contact')}
+          className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
             Get In Touch
           </Button>
         </div>
