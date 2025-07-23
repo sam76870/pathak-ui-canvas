@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
@@ -64,20 +64,20 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "shubham.pathak@email.com",
-      link: "mailto:shubham.pathak@email.com"
+      value: "sam76870@gmail.com",
+      link: "mailto:sam76870@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 98765 43210",
-      link: "tel:+919876543210"
+      value: "+91 9971949489",
+      link: "tel:+919971949489"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Mumbai, India",
-      link: "#"
+      value: "Delhi-NCR",
+      link: "https://maps.google.com/?q=Delhi-NCR"
     }
   ];
 
@@ -85,20 +85,20 @@ const ContactSection = () => {
     {
       icon: Github,
       name: "GitHub",
-      url: "https://github.com/shubhampathak",
+      url: "https://github.com/sam76870",
       color: "hover:text-gray-900 dark:hover:text-gray-100"
     },
     {
       icon: Linkedin,
       name: "LinkedIn", 
-      url: "https://linkedin.com/in/shubhampathak",
+      url: "https://www.linkedin.com/in/shubham-pathak-71495b166",
       color: "hover:text-blue-600"
     },
     {
-      icon: Twitter,
-      name: "Twitter",
-      url: "https://twitter.com/shubhampathak",
-      color: "hover:text-blue-400"
+      icon: MessageCircle,
+      name: "Get in Touch",
+      url: "#contact-form",
+      color: "hover:text-green-600"
     }
   ];
 
@@ -122,7 +122,7 @@ const ContactSection = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold mb-6 text-foreground">Send Me a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -244,9 +244,13 @@ const ContactSection = () => {
                   <a
                     key={index}
                     href={social.url}
-                    target="_blank"
+                    target={social.name === "Get in Touch" ? "_self" : "_blank"}
                     rel="noopener noreferrer"
                     className={`w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 hover:bg-primary/20 hover:scale-110 ${social.color}`}
+                    onClick={social.name === "Get in Touch" ? (e) => {
+                      e.preventDefault();
+                      document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+                    } : undefined}
                   >
                     <social.icon className="w-6 h-6" />
                   </a>
