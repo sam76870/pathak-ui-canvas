@@ -15,7 +15,7 @@ const ProjectsSection = () => {
       technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
       challenges: "User experience optimization and meal plan curation",
       impact: "Curated diverse meal plans to accommodate various culinary preferences",
-      liveUrl: "https://food-web-app-demo.netlify.app",
+      liveUrl: "https://mernfoodapp.netlify.app/",
       githubUrl: "https://github.com/shubhampathak/food-web-app",
       featured: true
     },
@@ -26,7 +26,7 @@ const ProjectsSection = () => {
       technologies: ["React.js", "Tailwind CSS", "Firebase", "Material UI"],
       challenges: "Real-time video streaming and user engagement features",
       impact: "Real-time database syncing with smooth video upload experience",
-      liveUrl: "https://reels-web-app-demo.netlify.app",
+      liveUrl: "https://reels-1.firebaseapp.com/",
       githubUrl: "https://github.com/shubhampathak/reels-web-app",
       featured: true
     },
