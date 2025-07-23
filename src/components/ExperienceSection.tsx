@@ -24,7 +24,7 @@ const ExperienceSection = () => {
     {
       title: "Software Engineer",
       company: "AVL India Pvt. Ltd.",
-      location: "Pune, India",
+      location: "Gurgaon, Haryana, India",
       duration: "Nov 2021 - Dec 2024",
       type: "Full-time",
       description: "Designed and developed real-time monitoring systems, automation solutions, and enterprise applications using modern web technologies and IoT platforms.",

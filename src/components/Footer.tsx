@@ -18,9 +18,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:shubham.pathak@email.com', label: 'Email' }
+    { icon: Github, href: 'https://github.com/sam76870', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/shubham-pathak-71495b166', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:sam76870@email.com', label: 'Email' }
   ];
 
   return (
@@ -74,10 +74,10 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-foreground">Get In Touch</h4>
             <div className="space-y-2">
               <p className="text-muted-foreground text-sm">
-                <span className="font-medium">Email:</span> shubham.pathak@email.com
+                <span className="font-medium">Email:</span> sam76870@email.com
               </p>
               <p className="text-muted-foreground text-sm">
-                <span className="font-medium">Location:</span> Mumbai, India
+                <span className="font-medium">Location:</span> Delhi/NCR, India
               </p>
               <div className="flex items-center gap-2 mt-4">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>

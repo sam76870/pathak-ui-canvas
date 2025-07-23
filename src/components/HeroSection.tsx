@@ -10,48 +10,15 @@ const HeroSection = () => {
   };
 
   const downloadResume = () => {
-    const resumeContent = `SHUBHAM PATHAK
-Software Engineer
 
-CONTACT INFORMATION
-Email: shubham.pathak@email.com
-Phone: +91 98765 43210
-Location: Mumbai, India
-
-PROFESSIONAL SUMMARY
-Motivated Software Engineer with 3.6+ years of experience in full-stack web development, specializing in modern UI applications. Passionate about driving innovation and continuously improving system performance.
-
-TECHNICAL SKILLS
-• Frontend: React.js, Vue.js, JavaScript, TypeScript, HTML5, CSS3
-• Backend: Node.js, Express.js
-• Database: MongoDB, PostgreSQL
-• Tools: Git, AWS, Redis, Socket.io
-
-EXPERIENCE
-Software Engineer | 2020 - Present
-• Developed scalable web applications using React.js and Node.js
-• Improved system performance and user experience
-• Collaborated with cross-functional teams to deliver high-quality solutions
-
-PROJECTS
-• RealTime Analytics Dashboard - Enterprise analytics platform
-• E-Commerce Platform - Full-stack solution with payment integration
-• Project Management Tool - Collaborative application for remote teams
-
-ACHIEVEMENTS
-• Delivered projects serving 10,000+ concurrent users
-• Improved client decision-making speed by 60%
-• Increased team productivity by 35% across multiple organizations`;
-
-    const blob = new Blob([resumeContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
+    const resumePath = '/resume/Shubham Pathak new.pdf';
+    // Create a temporary link element and trigger download
     const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Shubham_Pathak_Resume.txt';
+    link.href = resumePath;
+    link.download = 'Shubham Pathak new.pdf'; // This will be the downloaded file name
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(url);
   };
 
   return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
